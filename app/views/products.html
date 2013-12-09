@@ -1,0 +1,87 @@
+
+<!-- Header -->
+<div class="row">
+    <div id="header" class="span12">
+        <a href="#" title="Homepage Go Green" class="logo pull-left">Go Green</a>
+
+        <ul class="menu pull-right">
+            <li ng-repeat="item in menuitems"><a href="#/{{item.url}}" ng-class="{active:item.url == pagename}">{{item.text}}</a></li>
+        </ul>
+    </div>
+</div>
+<!-- /Header -->
+
+<!-- Content -->
+<div id="content" class="row">
+    <div id="product-list" class="span6" resizeable>
+        <div class="clearfix">
+            <h1 class="pull-left">Our products</h1>
+            <form class="sorting pull-right">
+                <p class="clearfix">
+                    <label for="sort-by">Sort by</label>
+                    <select name="sort-by" ng-model="sortOption" ng-options="s.name for s in sortOptions"></select>
+                    <label>Order</label>
+                    <a class="{{orderOption.name}}" ng-click="orderToggle()">&#160;</a>
+                </p>
+            </form>
+        </div>
+        
+        <ul>
+            <li ng-repeat="product in products|unique" ng-click="productDetail(product)" ng-class="{active:product.name==activeProduct.name}" upkey="productDetail(products[$index-1])" downkey="productDetail(products[$index+1])">
+                <div class="product clearfix">
+                    <img ng-src="{{product.smallThumbnail}}" alt="{{product.localizedName}}" title="{{product.localizedName}}" class="pull-left" />
+
+                    <div class="info pull-right">
+                        <div class="heading clearfix">
+                            <h2>{{product.localizedName|truncate:25}}</h2>
+                            <div class="clearfix">
+                                <div class="rating pull-left clearfix">
+                                    <a href="#"><img ng-src="{{product.rating|rating:1}}" /></a>
+                                    <a href="#"><img ng-src="{{product.rating|rating:2}}" /></a>
+                                    <a href="#"><img ng-src="{{product.rating|rating:3}}" /></a>
+                                    <a href="#"><img ng-src="{{product.rating|rating:4}}" /></a>
+                                    <a href="#"><img ng-src="{{product.rating|rating:5}}" /></a>
+                                </div>
+                                <span class="price pull-left">${{product.price|decimal:2}}</span>
+                            </div>
+                        </div>
+                        
+                        <p>{{product.summary}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div id="handler">&#160;</div>
+    </div>
+    <div id="product-detail" class="span6">
+        <div class="pane" ng-show="activeProduct">
+            <h3>{{activeProduct.localizedName}}</h3>
+            <img ng-src="{{activeProduct.images[0]}}" alt="{{activeProduct.localizedName}}" title="{{activeProduct.localizedName}}" />
+            <div class="info clearfix">
+                <span class="pull-left">${{activeProduct.price|decimal:2}}</span>
+                <div class="rating pull-right clearfix">
+                    <a href="#"><img ng-src="{{activeProduct.rating|rating:1}}" /></a>
+                    <a href="#"><img ng-src="{{activeProduct.rating|rating:2}}" /></a>
+                    <a href="#"><img ng-src="{{activeProduct.rating|rating:3}}" /></a>
+                    <a href="#"><img ng-src="{{activeProduct.rating|rating:4}}" /></a>
+                    <a href="#"><img ng-src="{{activeProduct.rating|rating:5}}" /></a>
+                </div>
+            </div>
+            <div ng-bind-html-unsafe="activeProduct.description"></div>
+        </div>
+        <div class="pane" ng-hide="activeProduct">
+            <p class="no-product">Please pick a product from the left</p>
+        </div>
+    </div>
+</div>
+<!-- /Content -->
+
+<!-- Footer -->
+<div class="row">
+    <div id="footer" class="span12">
+        <p>
+            <a href="#">Hippo CMS</a> <span>- Research &amp; Development Front-End Assessment by Niels Dequeker</span>
+        </p>
+    </div>
+</div>
+<!-- /Footer -->

@@ -1,0 +1,53 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" xmlns:ng="http://angularjs.org"> <!--<![endif]-->
+    <head>
+        <title>Hippo R&amp;D Front-End Assessment - Niels Dequeker</title>
+
+        <!-- Meta -->
+        <meta charset="utf-8" />
+        <meta name="description" content="Hippo R&amp;D Front-End Assessment by Niels Dequeker" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- Fonts -->
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Bitter:400italic" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:400,700" />
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="styles/main.css" />
+        <!--[if IE]><link rel="stylesheet" href="styles/ie.css" /><![endif]-->
+        <!--[if IE 7]><link rel="stylesheet" href="styles/ie7.css" /><![endif]-->
+
+        <!--[if lte IE 8]>
+        <script type="text/javascript" src="scripts/ie8.js"></script>
+        <![endif]-->
+    </head>
+    <body id="ng-app" ng-app="app">
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Application -->
+        <div class="container"><div class="wrapper" ng-view></div></div>
+
+        <!-- JavaScript -->
+        <!-- build:js scripts/plugins.js -->
+        <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+        <script type="text/javascript" src="bower_components/mousetrap/mousetrap.js"></script>
+        <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+        <script type="text/javascript" src="bower_components/json2/json2.js"></script>
+        <!-- endbuild -->
+        
+        <!-- build:js scripts/app.js -->
+        <script type="text/javascript" src="scripts/app.js"></script>
+        <script type="text/javascript" src="scripts/services.js"></script>
+        <script type="text/javascript" src="scripts/controllers.js"></script>
+        <script type="text/javascript" src="scripts/filters.js"></script>
+        <script type="text/javascript" src="scripts/directives.js"></script>
+        <!-- endbuild -->
+
+    </body>
+</html>
