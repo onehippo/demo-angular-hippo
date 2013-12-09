@@ -259,13 +259,7 @@ module.exports = function (grunt) {
             'watch'
         ]);
     });
-
-    grunt.registerTask('test', [
-        'clean:server',
-        'concurrent:test',
-        'connect:test'
-    ]);
-
+    
     grunt.registerTask('build', [
         'clean:dist',
         'useminPrepare',
