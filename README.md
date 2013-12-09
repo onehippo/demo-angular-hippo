@@ -1,5 +1,5 @@
-Demo using AngularJS with the Hippo CMS API
-===========================================
+Demo: AngularJS with the [Hippo](http://www.onehippo.com/en) API
+================================================================
 
 > Demo project showing an AngularJS application consuming the Hippo CMS REST API.
 
@@ -7,6 +7,7 @@ Demo using AngularJS with the Hippo CMS API
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
 * [Git](http://git-scm.com/)
+* [Ruby and Compass](http://compass-style.org/install/)
 
 ####Dependencies
 
