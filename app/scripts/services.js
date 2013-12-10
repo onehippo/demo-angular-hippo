@@ -30,6 +30,8 @@ app.service('Products', ['$http', '$q', 'apiPrefix', function($http, $q, apiPref
 		*/
 		fetchAll: function (sortOption, orderOption)
 		{
+			// TODO: remove the use of futures
+
 			// fetch products
 			var ref = this;
 			ref.items.length = 0;
@@ -61,6 +63,8 @@ app.service('Products', ['$http', '$q', 'apiPrefix', function($http, $q, apiPref
 		*/
 		fetchOne: function(productLink)
 		{
+			// TODO: remove the use of futures
+			
 			var d = $q.defer();
 			var url = productLink + '?_type=json';
 			$http.get(url).then(function(data, status)

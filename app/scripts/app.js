@@ -1,6 +1,7 @@
 /**
 * Application
 */
+// TODO: remove global variable app
 var app = angular.module('app', []);
 
 // configuration
@@ -25,6 +26,8 @@ app.run(['$location', '$rootScope', function ($location, $rootScope)
 {
 	// menu
 	$rootScope.location = $location;
+
+	// TODO: move these to a menu service
 	$rootScope.menuitems = [{
 			text: 'Home',
 			url: 'home'

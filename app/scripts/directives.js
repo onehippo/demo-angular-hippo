@@ -1,3 +1,5 @@
+// TODO: add comments for each directive
+
 app.directive('upkey', function()
 {
 	return {
