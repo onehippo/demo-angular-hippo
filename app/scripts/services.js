@@ -78,4 +78,25 @@ angular.module('app')
 			}
 		}
 
+	}])
+
+	.service('MenuService', [function () {
+		var menuService = {};
+
+		menuService.items = [{
+				text: 'Home',
+				url: 'home'
+			},{
+				text: 'Products',
+				url: 'products',
+			},{
+				text: 'News & Events',
+				url: 'news-and-events'
+			},{
+				text: 'Contacts',
+				url: 'contacts'
+			}
+		];
+
+		return menuService;
 	}]);

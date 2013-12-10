@@ -20,24 +20,10 @@ angular.module('app', [])
 
 	.constant('apiPrefix', 'http://www.demo.test.onehippo.com/restapi')
 
-	.run(['$location', '$rootScope', function ($location, $rootScope)
+	.run(['$location', '$rootScope', 'MenuService', function ($location, $rootScope, MenuService)
 	{
 		// menu
 		$rootScope.location = $location;
-
-		// TODO: move these to a menu service
-		$rootScope.menuitems = [{
-				text: 'Home',
-				url: 'home'
-			},{
-				text: 'Products',
-				url: 'products',
-			},{
-				text: 'News & Events',
-				url: 'news-and-events'
-			},{
-				text: 'Contacts',
-				url: 'contacts'
-			}
-		];
+		
+		$rootScope.menuitems = MenuService.items;
 	}]);
