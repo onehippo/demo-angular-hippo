@@ -33,31 +33,16 @@ angular.module('app')
 			fetchAll: function (sortOption, orderOption)
 			{
 				// TODO: remove the use of futures
-
-				// fetch products
-				var ref = this;
-				ref.items.length = 0;
-
+				var deferred = $q.defer();
 				var url = apiPrefix + '/topproducts?_type=json&sortby=' + encodeURIComponent(sortOption.command) + '&sortdir=' + orderOption.command + '&max=9999999&FORCE_CLIENT_HOST=true';
-				
-				var d = $q.defer();
-				$http.get(url).success(function(data, status)
-				{
-					// fetch detailed info
-					for (var i = data.length - 1; i >= 0; i--)
-					{
-						ref.fetchOne(data[i].productLink).then(function(info, status)
-						{
-							ref.items.push(info.data);
 
-							if (ref.items.length == data.length)
-							{
-								d.resolve(data);
-								return d.promise;
-							}
-						});
-					}
-				});
+	            $http.get( url ).success(function (data) {
+	                deferred.resolve(data);
+	            }).error(function (error) {
+	                deferred.reject('An error occured while fetching all products');
+	            });
+
+            	return deferred.promise;
 			},
 
 			/**
@@ -65,11 +50,17 @@ angular.module('app')
 			*/
 			fetchOne: function(productLink)
 			{
-				// TODO: remove the use of futures
+				var deferred = $q.defer();
 				var url = productLink + '?_type=json';
-				return $http.get(url);
+				$http.get(url).success(function(data)
+				{
+					deferred.resolve(data);
+				});
+
+				return deferred.promise;
 			}
 		}
+
 	}])
 
 	.service('MenuService', [function () {

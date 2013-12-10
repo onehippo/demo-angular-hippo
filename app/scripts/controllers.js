@@ -14,15 +14,15 @@ angular.module('app')
 		$scope.orderOption = Products.orderOptions[0];
 
 		// fetch products
-		Products.fetchAll($scope.sortOption, $scope.orderOption);
-		$scope.products = Products.items;
-		$scope.activeProduct = Products.items[0];
-
-		$scope.productDetail = function (productLink)
+		fetchAllProducts($scope.sortOption, $scope.orderOption);
+		
+		$scope.showProduct = function (product)
 		{
-			Products.fetchOne(productLink).then(function (result) {
-				$scope.activeProduct = result;
-			});
+			if (product['links']) {
+				Products.fetchOne(product['links'][0]['Link'].href).then(function (response) {
+					$scope.activeProduct = response;
+				})
+			}
 		}
 		
 		$scope.orderToggle = function ()
@@ -32,11 +32,17 @@ angular.module('app')
 		
 		$scope.$watch('sortOption', function (option)
 		{
-			Products.fetchAll($scope.sortOption, $scope.orderOption);
+			fetchAllProducts($scope.sortOption, $scope.orderOption);
 		});
 
 		$scope.$watch('orderOption', function (option)
 		{
-			Products.fetchAll($scope.sortOption, $scope.orderOption);
+			fetchAllProducts($scope.sortOption, $scope.orderOption);
 		});
+
+		function fetchAllProducts(sortOption, orderOption) {
+			Products.fetchAll(sortOption, orderOption).then(function (response) {
+				$scope.products = response;
+			});
+		}
 	}]);

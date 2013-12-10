@@ -27,7 +27,7 @@
         </div>
         
         <ul>
-            <li ng-repeat="product in products|unique" ng-click="productDetail(product.links[0].Link.href)" ng-class="{active:product.name==activeProduct.name}" upkey="productDetail(products[$index-1])" downkey="productDetail(products[$index+1])">
+            <li ng-repeat="product in products|unique" ng-click="showProduct(product)" ng-class="{active:product.name==activeProduct.name}">
                 <div class="product clearfix">
                     <img ng-src="{{product.smallThumbnail}}" alt="{{product.localizedName}}" title="{{product.localizedName}}" class="pull-left" />
 
