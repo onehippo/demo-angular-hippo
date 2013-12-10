@@ -1,5 +1,5 @@
-Demo: AngularJS with the [Hippo](http://www.onehippo.com/en) API
-================================================================
+Demo consuming the [Hippo](http://www.onehippo.com/en) API
+==========================================================
 
 > Demo project showing an AngularJS application consuming the Hippo CMS REST API.
 
