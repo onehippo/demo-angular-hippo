@@ -1,44 +1,40 @@
-/**
-* Products controller
-*/
-app.controller('ProductsController', ['$scope', '$http', 'Products', '$location', function ($scope, $http, Products, $location)
-{
-	// initial data
-	$scope.pagename = 'products';
-	$scope.sortOptions = Products.sortOptions;
-	$scope.sortOption = Products.sortOptions[0];
-
-	$scope.orderOptions = Products.orderOptions;
-	$scope.orderOption = Products.orderOptions[0];
-
-	// fetch products
-	Products.fetchAll($scope.sortOption, $scope.orderOption);
-	$scope.products = Products.items;
-	$scope.activeProduct = Products.items[0];
+angular.module('app')
 
 	/**
-	* Set active product
+	* Products controller
 	*/
-	$scope.productDetail = function (product)
+	.controller('ProductsController', ['$scope', '$http', 'Products', '$location', function ($scope, $http, Products, $location)
 	{
-		$scope.activeProduct = product;
-	}
+		// initial data
+		$scope.pagename = 'products';
+		$scope.sortOptions = Products.sortOptions;
+		$scope.sortOption = Products.sortOptions[0];
 
-	/**
-	* Toggle the sorting order
-	*/
-	$scope.orderToggle = function ()
-	{
-		$scope.orderOption = ($scope.orderOption == $scope.orderOptions[0]) ? $scope.orderOptions[1] : $scope.orderOptions[0];
-	}
-	
-	$scope.$watch('sortOption', function (option)
-	{
-		Products.fetchAll($scope.sortOption, $scope.orderOption);
-	});
+		$scope.orderOptions = Products.orderOptions;
+		$scope.orderOption = Products.orderOptions[0];
 
-	$scope.$watch('orderOption', function (option)
-	{
+		// fetch products
 		Products.fetchAll($scope.sortOption, $scope.orderOption);
-	});
-}]);
+		$scope.products = Products.items;
+		$scope.activeProduct = Products.items[0];
+
+		$scope.productDetail = function (product)
+		{
+			$scope.activeProduct = product;
+		}
+		
+		$scope.orderToggle = function ()
+		{
+			$scope.orderOption = ($scope.orderOption == $scope.orderOptions[0]) ? $scope.orderOptions[1] : $scope.orderOptions[0];
+		}
+		
+		$scope.$watch('sortOption', function (option)
+		{
+			Products.fetchAll($scope.sortOption, $scope.orderOption);
+		});
+
+		$scope.$watch('orderOption', function (option)
+		{
+			Products.fetchAll($scope.sortOption, $scope.orderOption);
+		});
+	}]);
