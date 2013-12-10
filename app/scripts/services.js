@@ -66,18 +66,10 @@ angular.module('app')
 			fetchOne: function(productLink)
 			{
 				// TODO: remove the use of futures
-				
-				var d = $q.defer();
 				var url = productLink + '?_type=json';
-				$http.get(url).then(function(data, status)
-				{
-					d.resolve(data);
-				});
-
-				return d.promise;
+				return $http.get(url);
 			}
 		}
-
 	}])
 
 	.service('MenuService', [function () {

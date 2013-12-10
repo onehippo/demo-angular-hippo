@@ -18,9 +18,11 @@ angular.module('app')
 		$scope.products = Products.items;
 		$scope.activeProduct = Products.items[0];
 
-		$scope.productDetail = function (product)
+		$scope.productDetail = function (productLink)
 		{
-			$scope.activeProduct = product;
+			Products.fetchOne(productLink).then(function (result) {
+				$scope.activeProduct = result;
+			});
 		}
 		
 		$scope.orderToggle = function ()
