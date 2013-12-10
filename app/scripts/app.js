@@ -19,6 +19,8 @@ app.config(['$routeProvider', '$httpProvider', '$locationProvider', function($ro
 	});
 }]);
 
+.constant('apiPrefix', 'http://www.demo.test.onehippo.com/restapi')
+
 app.run(['$location', '$rootScope', function ($location, $rootScope)
 {
 	// menu

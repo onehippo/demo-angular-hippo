@@ -1,4 +1,4 @@
-app.service('Products', ['$http', '$q', function($http, $q)
+app.service('Products', ['$http', '$q', 'apiPrefix', function($http, $q, apiPrefix)
 {
 	return {
 		items: [],
@@ -34,8 +34,8 @@ app.service('Products', ['$http', '$q', function($http, $q)
 			var ref = this;
 			ref.items.length = 0;
 
-			var url = 'http://www.demo.onehippo.com/restapi/topproducts?_type=json&sortby=' + encodeURIComponent(sortOption.command) + '&sortdir=' + orderOption.command + '&max=9999999';
-
+			var url = apiPrefix + '/topproducts?_type=json&sortby=' + encodeURIComponent(sortOption.command) + '&sortdir=' + orderOption.command + '&max=9999999&FORCE_CLIENT_HOST=true';
+			
 			var d = $q.defer();
 			$http.get(url).success(function(data, status)
 			{
