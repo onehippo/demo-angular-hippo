@@ -1,5 +1,5 @@
-Consuming a Hippo CMS website API with AngularJS
-================================================
+Using a Hippo website API with AngularJS
+========================================
 
 > Demo project showing an AngularJS application consuming the [Hippo CMS](http://www.onehippo.com/en) GoGreen REST API.
 
