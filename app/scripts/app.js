@@ -18,7 +18,7 @@ angular.module('app', [])
 		});
 	}])
 
-	.constant('apiPrefix', 'http://www.demo.test.onehippo.com/restapi')
+	.constant('apiPrefix', 'http://www.demo.onehippo.com/restapi')
 
 	.run(['$location', '$rootScope', 'MenuService', function ($location, $rootScope, MenuService)
 	{
