@@ -40,6 +40,7 @@ app.filter('decimal', function()
 /**
 * Rating
 */
+// TODO: rewrite rating directive, based on the UI rating directive
 app.filter('rating', function()
 {
     return function (rating, index)
