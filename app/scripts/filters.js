@@ -4,8 +4,9 @@ angular.module('app')
     * Truncate string
     */
     .filter('truncate', function () {
-        return function (text, length, end)
-        {
+        return function (text, length, end) {
+            var text = text || '';
+            
         	// default length
             if (isNaN(length))
                 length = 10;
@@ -14,6 +15,7 @@ angular.module('app')
             if (end === undefined)
                 end = '...';
 
+            
             // truncate
             if (text.length <= length || text.length - end.length <= length)
             {
@@ -61,6 +63,8 @@ angular.module('app')
     .filter('unique', function() {
         return function (items)
         {
+            return items;
+            /*
             var unique = [];
             var addedItems = [];
 
@@ -75,5 +79,6 @@ angular.module('app')
 
 
             return unique.reverse();
+            */
         };
     });
