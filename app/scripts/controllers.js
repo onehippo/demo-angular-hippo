@@ -3,7 +3,7 @@ angular.module('app')
 	/**
 	* Products controller
 	*/
-	.controller('ProductsController', ['$scope', '$http', 'Products', '$location', function ($scope, $http, Products, $location)
+	.controller('ProductsController', ['$scope', '$http', 'Products', function ($scope, $http, Products)
 	{
 		// initial data
 		$scope.pagename = 'products';

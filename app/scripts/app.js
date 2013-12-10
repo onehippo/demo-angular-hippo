@@ -3,7 +3,7 @@ angular.module('app', [])
 	/**
 	* Application configuration
 	*/
-	.config(['$routeProvider', '$httpProvider', '$locationProvider', function($routeProvider, $httpProvider, $locationProvider)
+	.config(['$routeProvider', function($routeProvider)
 	{
 		// product overview
 		$routeProvider
@@ -23,7 +23,5 @@ angular.module('app', [])
 	.run(['$location', '$rootScope', 'MenuService', function ($location, $rootScope, MenuService)
 	{
 		// menu
-		$rootScope.location = $location;
-		
 		$rootScope.menuitems = MenuService.items;
 	}]);
