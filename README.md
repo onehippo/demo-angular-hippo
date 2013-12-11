@@ -28,3 +28,8 @@ Run both commands below in the project root directory.
 
 ## Build instructions
 To run the application server, run `$ grunt server` inside the project directory.
+
+## Further reference
+
+* [Download Hippo GoGreen](http://www.onehippo.com/en/resources/demo)
+* [AngularJS](http://angularjs.org/)
