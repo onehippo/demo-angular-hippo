@@ -1,40 +1,7 @@
-// TODO: add comments for each directive
 angular.module('app')
-	
-	/**
-	* upkey
-	*/
-	.directive('upkey', function()
-	{
-		return {
-			link: function keyup(scope, iElement, iAttrs)
-			{
-				Mousetrap.bind('up', function()
-				{
-					scope.$apply(iAttrs.upkey);
-				}, 'keyup');
-			}
-		};
-	})
 
 	/**
-	* downkey
-	*/
-	.directive('downkey', function()
-	{
-		return {
-			link: function keyup(scope, iElement, iAttrs)
-			{
-				Mousetrap.bind('down', function()
-				{
-					scope.$apply(iAttrs.downkey);
-				}, 'keyup');
-			}
-		};
-	})
-
-	/**
-	* resizeable
+	* Resizeable element
 	*/
 	.directive('resizeable', function()
 	{
