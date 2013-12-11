@@ -42,7 +42,6 @@ angular.module('app')
     /**
     * Rating
     */
-    // TODO: rewrite rating directive, based on the UI rating directive
     .filter('rating', function() {
         return function (rating, index)
         {
@@ -63,8 +62,7 @@ angular.module('app')
     .filter('unique', function() {
         return function (items)
         {
-            return items;
-            /*
+            var items = items || [];
             var unique = [];
             var addedItems = [];
 
@@ -79,6 +77,5 @@ angular.module('app')
 
 
             return unique.reverse();
-            */
         };
     });
