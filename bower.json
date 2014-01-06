@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "dependencies": {
     "jquery": "~1.9.1",
-    "sass-bootstrap": "~2.3.0",
     "angular": "~1.0.5",
     "angular-resource": "~1.0.5",
     "angular-cookies": "~1.0.5",
