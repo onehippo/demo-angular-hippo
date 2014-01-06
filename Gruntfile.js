@@ -28,9 +28,9 @@ module.exports = function (grunt) {
             options: {
                 nospawn: true
             },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server']
+            less: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.{less}'],
+                tasks: ['less']
             },
             livereload: {
                 options: {
@@ -99,26 +99,37 @@ module.exports = function (grunt) {
             },
             server: '.tmp'
         },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                relativeAssets: false
-            },
-            dist: {},
-            server: {
-                options: {
-                    debugInfo: true
-                }
+        //compass: {
+        //    options: {
+        //        sassDir: '<%= yeoman.app %>/styles',
+        //        cssDir: '.tmp/styles',
+        //        generatedImagesDir: '.tmp/images/generated',
+        //        imagesDir: '<%= yeoman.app %>/images',
+        //        javascriptsDir: '<%= yeoman.app %>/scripts',
+        //        fontsDir: '<%= yeoman.app %>/styles/fonts',
+        //        importPath: '<%= yeoman.app %>/bower_components',
+        //        httpImagesPath: '/images',
+        //        httpGeneratedImagesPath: '/images/generated',
+        //        relativeAssets: false
+        //    },
+        //    dist: {},
+        //    server: {
+        //        options: {
+        //            debugInfo: true
+        //        }
+        //    }
+        //},
+
+
+        less: {
+          development: {
+            files: {
+              ".tmp/styles/main.css": "<%= yeoman.app %>/styles/*.less"
             }
+          }
         },
+
+
         // not used since Uglify task does concat,
         // but still available if needed
         /*concat: {
@@ -232,13 +243,13 @@ module.exports = function (grunt) {
         },
         concurrent: {
             server: [
-                'compass:server'
+                'less'
             ],
             test: [
-                'compass'
+                'less'
             ],
             dist: [
-                'compass:dist',
+                'less',
                 'imagemin',
                 'svgmin',
                 'htmlmin'

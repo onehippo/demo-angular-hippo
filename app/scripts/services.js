@@ -34,7 +34,7 @@ angular.module('app')
 			{
 				// TODO: remove the use of futures
 				var deferred = $q.defer();
-				var url = apiPrefix + '/topproducts?_type=json&sortby=' + encodeURIComponent(sortOption.command) + '&sortdir=' + orderOption.command + '&max=9999999&FORCE_CLIENT_HOST=true';
+				var url = apiPrefix + '/topproducts?_type=json&sortby=' + encodeURIComponent(sortOption.command) + '&sortdir=' + orderOption.command + '&max=9999999';//&FORCE_CLIENT_HOST=true';
 
 	            $http.get( url ).success(function (data) {
 	                deferred.resolve(data);
