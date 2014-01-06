@@ -8,7 +8,6 @@ Hippo website API and AngularJS
 
 * [Node Package Manager](https://npmjs.org/) (NPM)
 * [Git](http://git-scm.com/)
-* [Ruby and Compass](http://compass-style.org/install/)
 
 ####Dependencies
 
