@@ -3,7 +3,7 @@ angular.module('app', [])
 	/**
 	* Application configuration
 	*/
-	.config(['$routeProvider', function($routeProvider)
+	.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider)
 	{
 		// product overview
 		$routeProvider
@@ -16,6 +16,10 @@ angular.module('app', [])
 		.otherwise({
 			redirectTo: '/products'
 		});
+
+		// prevent preflight request for cross-domain Ajax calls
+		$httpProvider.defaults.useXDomain = true;
+		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 	}])
 
 	.constant('apiPrefix', 'http://www.demo.onehippo.com/restapi')
