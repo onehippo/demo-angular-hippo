@@ -20,8 +20,12 @@ angular.module('app')
 		{
 			if (product['links']) {
 				Products.fetchOne(product['links'][0]['Link'].href).then(function (response) {
+                    console.log(response);
+                    if (response && (!response.images || response.images.length < 1)) {
+                        response.images = ['dummy.png'];
+                    }
 					$scope.activeProduct = response;
-				})
+				});
 			}
 		}
 		
