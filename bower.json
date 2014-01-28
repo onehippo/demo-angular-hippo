@@ -7,8 +7,8 @@
     "angular-resource": "~1.0.5",
     "angular-cookies": "~1.0.5",
     "angular-sanitize": "~1.0.5",
-    "json2": "*",
-    "mousetrap": "*"
+    "json2": "e39db4b7e6249f04a195e7dd0840e610cc9e941e",
+    "mousetrap": "~1.4.6"
   },
   "devDependencies": {}
 }
