@@ -30,5 +30,6 @@ To run the application server, run `$ grunt server` inside the project directory
 
 ## Further reference
 
+* [Blogpost about Hippo CMS with AngularJS](http://www.onehippo.com/en/resources/blogs/2014/01/angularjs-and-content-management-systems.html)
 * [Download Hippo GoGreen](http://www.onehippo.com/en/resources/demo)
 * [AngularJS](http://angularjs.org/)
